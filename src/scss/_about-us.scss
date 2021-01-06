@@ -1,0 +1,40 @@
+@import "../scss/settings/colors";
+
+.about-us-container {
+  width: 100%;
+  display: flex;
+  margin-top: 80px;
+
+  img {
+    width: 50%;
+  }
+
+  .info-about {
+    background-color: $white-col;
+
+    .specify-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      h1 {
+        color: $dark-grey-col;
+        font-size: 25px;
+        font-weight: 400;
+        margin-top: 150px;
+      }
+
+      img {
+        width: 150px;
+        margin: 20px 0;
+      }
+
+      img:last-child {
+        width: 200px;
+        height: 150px;
+        align-self: flex-end;
+      }
+    }
+  }
+}

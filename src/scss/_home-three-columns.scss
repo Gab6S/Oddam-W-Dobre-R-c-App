@@ -1,0 +1,34 @@
+@import "../scss/settings/colors";
+
+.columns-container {
+  background-color: $yellow-col;
+  padding: 46px 163px 86px;
+
+  .columns-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .summary-info {
+    height: 252px;
+    width: 334px;
+  }
+}
+
+.summary-info li:first-child {
+  font-size: 90px;
+  color: #5e5322;
+  font-weight: lighter;
+}
+
+.summary-info li:nth-child(2) {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: $dark-grey-col;
+}
+
+.summary-info li:nth-child(3) {
+  font-size: 16px;
+  color: $dark-grey-col;
+}

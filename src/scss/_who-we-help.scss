@@ -1,0 +1,86 @@
+@import "../scss/settings/colors";
+
+.organizations-container {
+  width: 100%;
+
+  .who-we-help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      margin-top: 35px;
+      margin-bottom: 15px;
+      font-size: 30px;
+    }
+
+    img {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+
+      li {
+        width: 150px;
+        height: 50px;
+
+        &:hover {
+          border: 0.75px solid $dark-grey-col;
+        }
+
+        div {
+          font-size: 18px;
+          text-align: center;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+
+.info-about-us {
+  width: 450px;
+  height: 80px;
+  margin-top: 35px;
+
+  p {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.selecting-companies {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 200px;
+
+  p {
+    font-size: 14px;
+    font-weight: lighter;
+  }
+
+  .company-details {
+    h2 {
+      font-size: 20px;
+      font-weight: lighter;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: lighter;
+    }
+  }
+}
+
+.straight-line {
+  width: calc(100% - 400px);
+  margin: 10px 200px;
+  height: 1px;
+  background-color: #707070;
+  text-align: center;
+}
