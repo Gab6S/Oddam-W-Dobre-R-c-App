@@ -6,15 +6,55 @@ import Organizations from "./Organizations";
 
 const WhoWeHelp = () => {
   const [data, setData] = useState([]);
+  const [desc, setDesc] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [companiesPerPage, setCompaniesPerPage] = useState(3);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("http://localhost:3005/fundations");
-      setData(result.data);
+      const result = await axios("http://localhost:3005/aboutFundations");
+      setData(result.data.fundations);
+      setDesc(result.data.description);
     };
 
     fetchData();
   }, []);
+
+  const indexOfLastCompany = currentPage * companiesPerPage;
+  const indexOfFirstCompany = indexOfLastCompany - companiesPerPage;
+  const currentCompanies = data.slice(indexOfFirstCompany, indexOfLastCompany);
+
+  const renderCompanies = currentCompanies.map((el, index) => {
+    return (
+      <div className="selecting-companies">
+        <div className="company-details">
+          <h2>Fundacja {el.name}</h2>
+          <h3>Cel i misja: {el.mission}</h3>
+          <div className="straight-line"></div>
+        </div>
+        <p>{el.items.map((el) => el + " ")}</p>
+      </div>
+    );
+  });
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(data.length / companiesPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  const renderPageNumbers = pageNumbers.map((number) => {
+    return (
+      <li
+        key={number}
+        id={number}
+        onClick={(event) => {
+          setCurrentPage(Number(event.target.id));
+        }}
+      >
+        {number}
+      </li>
+    );
+  });
 
   return (
     <section className="organizations-container">
@@ -34,34 +74,13 @@ const WhoWeHelp = () => {
         </ul>
       </div>
       <div className="info-about-us">
-        <p>
-          W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
-          współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
-          czego potrzebują.
-        </p>
+        <p>{desc}</p>
       </div>
       <div>
-        {data.map((el) => {
-          return (
-            <>
-              <div className="selecting-companies">
-                <div className="company-details">
-                  <h2>Fundacja {el.name}</h2>
-                  <h3>Cel i misja: {el.mission}</h3>
-                </div>
-
-                <p>{el.items.map((el) => el + " ")}</p>
-              </div>
-              <div className="straight-line"></div>
-            </>
-          );
-        })}
+        {renderCompanies}
+        {/* <div className="straight-line"></div> */}
       </div>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
+      <ul id="page-numbers">{renderPageNumbers}</ul>
     </section>
   );
 };
