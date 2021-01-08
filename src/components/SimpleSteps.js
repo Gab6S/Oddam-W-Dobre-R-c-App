@@ -6,10 +6,11 @@ import loupe from "../assets/loupe.svg";
 import loading from "../assets/loading.svg";
 import "../scss/_simple-steps.scss";
 import { Link } from "react-router-dom";
+import { Element } from "react-scroll";
 
 const SimpleSteps = () => {
   return (
-    <>
+    <Element name="simple-steps">
       <section className="four-steps-container">
         <h1>Wystarczą 4 proste kroki</h1>
         <img src={decoration} alt="decoration line"></img>
@@ -46,7 +47,7 @@ const SimpleSteps = () => {
           </Link>
         </div>
       </section>
-    </>
+    </Element>
   );
 };
 

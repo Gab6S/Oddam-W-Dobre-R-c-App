@@ -3,10 +3,11 @@ import decoration from "../assets/decoration.svg";
 import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
 import "../scss/_contact.scss";
+import { Element } from "react-scroll";
 
 const Contact = () => {
   return (
-    <>
+    <Element name="contact">
       <section>
         <div className="contact-container"></div>
         <div className="contact-us-container">
@@ -44,7 +45,7 @@ const Contact = () => {
         <img src={facebook} alt="facebook icon"></img>
         <img src={instagram} alt="instagram icon"></img>
       </footer>
-    </>
+    </Element>
   );
 };
 

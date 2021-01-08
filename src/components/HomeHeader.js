@@ -33,19 +33,22 @@ const HomeHeader = () => {
             </ul>
             <ul className="menu-down">
               <li>
-                <LinkScroll
-                  activeClass="active"
-                  to="Start"
-                  spy={true}
-                  smooth={true}
-                >
-                  Start{" "}
+                <LinkScroll to="start">Start </LinkScroll>
+              </li>
+              <li>
+                <LinkScroll to="simple-steps">O co chodzi?</LinkScroll>
+              </li>
+              <li>
+                <LinkScroll to="about-us">O nas</LinkScroll>
+              </li>
+              <li>
+                <LinkScroll to="organizations">
+                  Fundacja i organizacje
                 </LinkScroll>
               </li>
-              <li>O co chodzi?</li>
-              <li>O nas</li>
-              <li>Fundacja i organizacje</li>
-              <li>Kontakt</li>
+              <li>
+                <LinkScroll to="contact">Kontakt</LinkScroll>
+              </li>
             </ul>
           </nav>
         </header>

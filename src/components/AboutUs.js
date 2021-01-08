@@ -3,10 +3,11 @@ import decoration from "../assets/decoration.svg";
 import people from "../assets/people.jpg";
 import signature from "../assets/signature.svg";
 import "../scss/_about-us.scss";
+import { Element } from "react-scroll";
 
 const AboutUs = () => {
   return (
-    <>
+    <Element name="about-us">
       <section className="about-us-container">
         <div className="info-about">
           <div className="specify-info">
@@ -22,7 +23,7 @@ const AboutUs = () => {
         </div>
         <img src={people} alt="group of people"></img>
       </section>
-    </>
+    </Element>
   );
 };
 
