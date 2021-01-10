@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import decoration from "../assets/decoration.svg";
 import "../scss/_who-we-help.scss";
-import Organizations from "./Organizations";
 import { Element } from "react-scroll";
 
 const WhoWeHelp = () => {

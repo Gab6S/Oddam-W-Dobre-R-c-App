@@ -6,16 +6,33 @@ import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
 import SimpleSteps from "./SimpleSteps";
 import WhoWeHelp from "./WhoWeHelp";
+import { Link, Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import LogIn from "./LogIn";
+import Register from "./Register";
+import Navigation from "./Navigation";
 
 const Home = () => {
   return (
     <div className="main-container">
-      <HomeHeader />
-      <HomeThreeColumns />
-      <SimpleSteps />
-      <AboutUs />
-      <WhoWeHelp />
-      <Contact />
+      <Router>
+        <Navigation />
+        <Switch>
+          <Route exact path="/">
+            <HomeHeader />
+            <HomeThreeColumns />
+            <SimpleSteps />
+            <AboutUs />
+            <WhoWeHelp />
+            <Contact />
+          </Route>
+          <Route path="/logowanie">
+            <LogIn />
+          </Route>
+          <Route path="/rejestracja">
+            <Register />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };
