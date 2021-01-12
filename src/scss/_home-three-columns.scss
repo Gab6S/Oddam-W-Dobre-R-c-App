@@ -2,17 +2,18 @@
 
 .columns-container {
   background-color: $yellow-col;
-  padding: 46px 163px 86px;
+  padding: 50px 100px;
+  min-height: 150px;
 
   .columns-flex {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
 
   .summary-info {
-    height: 252px;
-    width: 334px;
+    text-align: center;
+    padding: 0 15px;
   }
 }
 
@@ -26,6 +27,7 @@
   text-transform: uppercase;
   font-size: 18px;
   color: $dark-grey-col;
+  margin-bottom: 15px;
 }
 
 .summary-info li:nth-child(3) {

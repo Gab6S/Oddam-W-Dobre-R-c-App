@@ -52,7 +52,7 @@
 
   "aboutOrganizations": {
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-    "organizations": [
+    "fundations": [
       {
         "name": "'Lorem ipsum 1'",
         "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
@@ -72,7 +72,7 @@
   },
   "aboutFundraising": {
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-    "fundraising": [
+    "fundations": [
       {
         "name": "'Lorem Ipsum 1'",
         "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",

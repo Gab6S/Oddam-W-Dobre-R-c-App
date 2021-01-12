@@ -11,34 +11,36 @@ const WhoWeHelp = () => {
   const [companiesPerPage, setCompaniesPerPage] = useState(3);
   const [visible, setVisible] = useState(false);
 
+  const [current, setCurrent] = useState("aboutFundations");
+
+  const fetchData = async () => {
+    const result = await axios(`http://localhost:3005/${current}`);
+    setData(result.data.fundations);
+    setDesc(result.data.description);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios("http://localhost:3005/aboutFundations");
-      setData(result.data.fundations);
-      setDesc(result.data.description);
-    };
-
+    setCurrentPage(1);
     fetchData();
-  }, []);
+  }, [current]);
 
-  const indexOfLastCompany = currentPage * companiesPerPage;
-  const indexOfFirstCompany = indexOfLastCompany - companiesPerPage;
-  const currentCompanies = data.slice(indexOfFirstCompany, indexOfLastCompany);
-
-  const renderCompanies = currentCompanies.map((el, index) => {
+  const indexOfLastCompany = (currentPage - 1) * companiesPerPage;
+  const indexOfFirstCompany = indexOfLastCompany + companiesPerPage;
+  const currentCompanies = data?.slice(indexOfLastCompany, indexOfFirstCompany);
+  console.log(currentCompanies);
+  const renderCompanies = currentCompanies?.map((el) => {
     return (
       <>
-        {" "}
-        {visible && (
-          <div className="selecting-companies">
-            <div className="company-details">
-              <h2>Fundacja {el.name}</h2>
-              <h3>Cel i misja: {el.mission}</h3>
-              <div className="straight-line"></div>
-            </div>
-            <p>{el.items.map((el) => el + " ")}</p>
+        (
+        <div className="selecting-companies">
+          <div className="company-details">
+            <h2>Fundacja {el.name}</h2>
+            <h3>Cel i misja: {el.mission}</h3>
+            <div className="straight-line"></div>
           </div>
-        )}
+          <p>{el?.items?.map((el) => el + " ")}</p>
+        </div>
+        )
       </>
     );
   });
@@ -75,13 +77,17 @@ const WhoWeHelp = () => {
           <img src={decoration} alt="decoration line"></img>
           <ul>
             <li>
-              <div onClick={() => setVisible(!visible)}>Fundacjom</div>
+              <div onClick={() => setCurrent("aboutFundations")}>Fundacjom</div>
             </li>
             <li>
-              <div>Organizacjom pozarządowym</div>
+              <div onClick={() => setCurrent("aboutOrganizations")}>
+                Organizacjom pozarządowym
+              </div>
             </li>
             <li>
-              <div>Lokalnym zbiórkom</div>
+              <div onClick={() => setCurrent("aboutFundraising")}>
+                Lokalnym zbiórkom
+              </div>
             </li>
           </ul>
         </div>

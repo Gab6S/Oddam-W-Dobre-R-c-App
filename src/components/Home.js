@@ -6,10 +6,16 @@ import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
 import SimpleSteps from "./SimpleSteps";
 import WhoWeHelp from "./WhoWeHelp";
-import { Link, Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  HashRouter,
+} from "react-router-dom";
 import LogIn from "./LogIn";
 import Register from "./Register";
 import Navigation from "./Navigation";
+import Logout from "./Logout";
 
 const Home = () => {
   return (
@@ -33,6 +39,9 @@ const Home = () => {
           </Route>
         </Switch>
       </Router>
+      <HashRouter>
+        <Route path="/wylogowano">{/* <Logout /> */}</Route>
+      </HashRouter>
     </div>
   );
 };

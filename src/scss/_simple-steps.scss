@@ -17,7 +17,46 @@
     margin: 25px 0;
   }
 
-  div:nth-child(4) {
+  .select-icons {
+    display: flex;
+    justify-content: space-around;
+    background-color: $white-col;
+    width: 100%;
+    min-height: 200px;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-right: 100px;
+      padding-left: 100px;
+
+      img {
+        margin-top: 50px;
+      }
+
+      li:nth-child(2) {
+        font-size: 18px;
+        opacity: 1;
+        margin-bottom: 10px;
+      }
+
+      li:nth-child(3) {
+        width: 70px;
+        height: 1px;
+        background-color: #707070;
+      }
+
+      li:nth-child(4) {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .give-items-away {
     width: 200px;
     height: 80px;
     border: 0.75px solid #3c3c3c;
@@ -29,42 +68,5 @@
     font-size: 25px;
 
     margin-top: 35px;
-  }
-}
-
-.select-icons {
-  display: flex;
-  justify-content: space-around;
-  background-color: $white-col;
-  width: 100%;
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 150px;
-    text-align: center;
-
-    img {
-      margin-top: 50px;
-    }
-
-    li:nth-child(2) {
-      font-size: 18px;
-      opacity: 1;
-      margin-bottom: 10px;
-    }
-
-    li:nth-child(3) {
-      width: 70px;
-      height: 1px;
-      background-color: #707070;
-    }
-
-    li:nth-child(4) {
-      font-size: 16px;
-      margin-top: 10px;
-      margin-bottom: 50px;
-    }
   }
 }

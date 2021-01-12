@@ -15,29 +15,35 @@ const SimpleSteps = () => {
         <h1>Wystarczą 4 proste kroki</h1>
         <img src={decoration} alt="decoration line"></img>
         <div className="select-icons">
-          <ul>
+          <ul className="column">
             <img src={tShirt} alt="t-shirt"></img>
             <li>Wybierz rzeczy</li>
             <li></li>
             <li>ubrania, zabawki, sprzęt i inne</li>
           </ul>
-          <ul>
+          <ul className="column">
             <img src={bag} alt="bag"></img>
+
             <li>Spakuj je</li>
+            <li></li>
             <li>skorzystaj z worków na śmieci</li>
           </ul>
-          <ul>
+          <ul className="column">
             <img src={loupe} alt="loupe"></img>
+
             <li>Zdecyduj komu chcesz pomóc</li>
+            <li></li>
             <li>wybierz zaufane miejsce</li>
           </ul>
-          <ul>
+          <ul className="column">
             <img src={loading} alt="loading"></img>
+
             <li>Zamów kuriera</li>
+            <li></li>
             <li>kurier przyjedzie w dogodnym terminie</li>
           </ul>
         </div>
-        <div>
+        <div className="give-items-away">
           {" "}
           <Link
             to="/logowanie"
