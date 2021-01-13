@@ -32,16 +32,48 @@ const Navigation = () => {
             </Link>
           </li>
           <li>
-            <LinkScroll to="simple-steps">O co chodzi?</LinkScroll>
+            <LinkScroll
+              to="simple-steps"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              O co chodzi?
+            </LinkScroll>
           </li>
           <li>
-            <LinkScroll to="about-us">O nas</LinkScroll>
+            <LinkScroll
+              to="about-us"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              O nas
+            </LinkScroll>
           </li>
           <li>
-            <LinkScroll to="organizations">Fundacja i organizacje</LinkScroll>
+            <LinkScroll
+              to="organizations"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Fundacja i organizacje
+            </LinkScroll>
           </li>
           <li>
-            <LinkScroll to="contact">Kontakt</LinkScroll>
+            <LinkScroll
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Kontakt
+            </LinkScroll>
           </li>
         </ul>
       </nav>

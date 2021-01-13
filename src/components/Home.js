@@ -39,9 +39,9 @@ const Home = () => {
           </Route>
         </Switch>
       </Router>
-      <HashRouter>
-        <Route path="/wylogowano">{/* <Logout /> */}</Route>
-      </HashRouter>
+      {/* <HashRouter>
+        <Route path="/wylogowano"><Logout /></Route>
+      </HashRouter> */}
     </div>
   );
 };

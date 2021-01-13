@@ -39,8 +39,7 @@ const Contact = () => {
 
   return (
     <Element name="contact">
-      <section>
-        <div className="contact-container"></div>
+      <section className="main-section-contact">
         <div className="contact-us-container">
           <h1>Skontaktuj się z nami</h1>
           <img src={decoration} alt="decoration line"></img>
@@ -48,7 +47,7 @@ const Contact = () => {
             {Object.keys(status) &&
               "Wiadomość została wysłana! <br /> Wkrótce się skontaktujemy."}
           </div> */}
-          <form onSubmit={postData}>
+          <form onSubmit={postData} className="form">
             <label for="name">Wpisz swoje imię</label>
             <br />
             <input
@@ -92,7 +91,7 @@ const Contact = () => {
               name="message"
               value={message}
               placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-              ref={register({ require: true, min: 120 })}
+              ref={register({ require: true, minLength: 120 })}
               onChange={(e) => setMessage(e.target.value)}
             />
             <br />
@@ -100,15 +99,15 @@ const Contact = () => {
               {/* {Object.keys. < 120 && */}
               {/* "Wiadomość musi mieć conajmniej 120 znaków!"} */}
             </div>
-            <button>Wyślij</button>
+            <button className="send-btn">Wyślij</button>
           </form>
         </div>
+        <footer>
+          <p>Copyright by Coders Lab</p>
+          <img src={facebook} alt="facebook icon"></img>
+          <img src={instagram} alt="instagram icon"></img>
+        </footer>
       </section>
-      <footer>
-        <p>Copyright by Coders Lab</p>
-        <img src={facebook} alt="facebook icon"></img>
-        <img src={instagram} alt="instagram icon"></img>
-      </footer>
     </Element>
   );
 };

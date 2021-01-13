@@ -28,7 +28,7 @@ const WhoWeHelp = () => {
   const indexOfFirstCompany = indexOfLastCompany + companiesPerPage;
   const currentCompanies = data?.slice(indexOfLastCompany, indexOfFirstCompany);
   console.log(currentCompanies);
-  const renderCompanies = currentCompanies?.map((el) => {
+  const renderCompanies = currentCompanies?.map((el, index) => {
     return (
       <>
         (
@@ -36,7 +36,9 @@ const WhoWeHelp = () => {
           <div className="company-details">
             <h2>Fundacja {el.name}</h2>
             <h3>Cel i misja: {el.mission}</h3>
-            <div className="straight-line"></div>
+            {currentCompanies.length >= index + 2 ? (
+              <div className="straight-line"></div>
+            ) : null}
           </div>
           <p>{el?.items?.map((el) => el + " ")}</p>
         </div>
@@ -45,29 +47,24 @@ const WhoWeHelp = () => {
     );
   });
 
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(data.length / companiesPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  const renderPageNumbers = pageNumbers.map((number) => {
-    return (
-      <>
-        {" "}
-        {visible && (
+  const pages = Math.ceil(data.length / companiesPerPage);
+  const renderPageNumbers =
+    pages > 1 &&
+    new Array(pages).fill(null).map((_, number) => {
+      return (
+        <>
           <li
             key={number}
-            id={number}
+            id={number + 1}
             onClick={(event) => {
               setCurrentPage(Number(event.target.id));
             }}
           >
-            {number}
+            {number + 1}
           </li>
-        )}
-      </>
-    );
-  });
+        </>
+      );
+    });
 
   return (
     <Element name="organizations">
@@ -91,11 +88,10 @@ const WhoWeHelp = () => {
             </li>
           </ul>
         </div>
-        <div className="info-about-us"> {visible && <p>{desc}</p>}</div>
-        <div>
-          {renderCompanies}
-          {/* <div className="straight-line"></div> */}
+        <div className="info-about-us">
+          <p>{desc}</p>
         </div>
+        <div>{renderCompanies}</div>
         <ul id="page-numbers">{renderPageNumbers}</ul>
       </section>
     </Element>

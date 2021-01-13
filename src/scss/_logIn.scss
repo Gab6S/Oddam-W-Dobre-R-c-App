@@ -62,11 +62,19 @@
       font-size: 14px;
       color: #3c3c3c;
       margin: 30px 120px 0;
-      border: none;
+      border: 0.75px solid transparent;
 
       &:hover {
         border: 0.75px solid #3c3c3c;
       }
     }
+  }
+}
+
+.password-input {
+  .errorMsg {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
   }
 }
