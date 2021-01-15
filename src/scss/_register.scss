@@ -21,6 +21,7 @@
     background-color: #f0f1f1;
     width: 300px;
     height: 180px;
+    padding: 15px, 30px;
 
     .form-layout {
       display: flex;
@@ -31,11 +32,11 @@
       label {
         font-size: 14px;
         color: #3c3c3c;
+        margin-bottom: 10px;
       }
-      input {
+      #email {
         font-size: 16px;
         background-color: #f0f1f1;
-        color: #3c3c3c;
 
         border-top-style: hidden;
         border-right-style: hidden;
@@ -64,4 +65,10 @@
       }
     }
   }
+}
+.errorMsg {
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 3px;
 }

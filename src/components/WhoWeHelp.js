@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import axios from "axios";
 import decoration from "../assets/decoration.svg";
 import "../scss/_who-we-help.scss";
@@ -10,7 +11,6 @@ const WhoWeHelp = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [companiesPerPage, setCompaniesPerPage] = useState(3);
   const [visible, setVisible] = useState(false);
-
   const [current, setCurrent] = useState("aboutFundations");
 
   const fetchData = async () => {

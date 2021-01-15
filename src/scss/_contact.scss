@@ -48,6 +48,16 @@
       width: 200px;
     }
 
+    .errorMsg {
+      color: red;
+      font-weight: bold;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+    .red-line {
+      border-bottom-color: red;
+    }
+
     button {
       width: 80px;
       height: 30px;

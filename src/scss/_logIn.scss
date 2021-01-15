@@ -20,7 +20,7 @@
   .form-sign-in {
     background-color: #f0f1f1;
     width: 300px;
-    height: 180px;
+    height: 220px;
 
     display: flex;
     flex-direction: column;
@@ -31,6 +31,7 @@
       label {
         font-size: 14px;
         color: #3c3c3c;
+        margin-bottom: 10px;
       }
       input {
         font-size: 16px;
@@ -47,6 +48,19 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+      }
+      .red-line {
+        border-bottom-color: red;
+      }
+
+      .password-input,
+      .email-input {
+        .errorMsg {
+          color: red;
+          font-weight: bold;
+          font-size: 12px;
+          margin-top: 3px;
+        }
       }
     }
   }
@@ -68,13 +82,5 @@
         border: 0.75px solid #3c3c3c;
       }
     }
-  }
-}
-
-.password-input {
-  .errorMsg {
-    color: red;
-    font-weight: bold;
-    font-size: 12px;
   }
 }
