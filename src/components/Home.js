@@ -6,6 +6,7 @@ import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
 import SimpleSteps from "./SimpleSteps";
 import WhoWeHelp from "./WhoWeHelp";
+import UserProvider from "../providers/UserProvider";
 import {
   Switch,
   Route,
@@ -20,28 +21,30 @@ import Logout from "./Logout";
 const Home = () => {
   return (
     <div className="main-container">
-      <Router>
-        <Navigation />
-        <Switch>
-          <Route exact path="/">
-            <HomeHeader />
-            <HomeThreeColumns />
-            <SimpleSteps />
-            <AboutUs />
-            <WhoWeHelp />
-            <Contact />
-          </Route>
-          <Route path="/logowanie">
-            <LogIn />
-          </Route>
-          <Route path="/rejestracja">
-            <Register />
-          </Route>
-        </Switch>
-      </Router>
-      {/* <HashRouter>
+      <UserProvider>
+        <Router>
+          <Navigation />
+          <Switch>
+            <Route exact path="/">
+              <HomeHeader />
+              <HomeThreeColumns />
+              <SimpleSteps />
+              <AboutUs />
+              <WhoWeHelp />
+              <Contact />
+            </Route>
+            <Route path="/logowanie">
+              <LogIn />
+            </Route>
+            <Route path="/rejestracja">
+              <Register />
+            </Route>
+          </Switch>
+        </Router>
+        {/* <HashRouter>
         <Route path="/wylogowano"><Logout /></Route>
       </HashRouter> */}
+      </UserProvider>
     </div>
   );
 };
