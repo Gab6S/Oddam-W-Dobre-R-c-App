@@ -1,0 +1,76 @@
+.intro-cont {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  //justify-content: flex-end;
+
+  //   padding-top: 150px;
+  //   position: relative;
+
+  .bg-img {
+    background-image: url("../assets/form-hero-image.jpg");
+    //background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+  }
+
+  .right-side-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 32px;
+      color: #3c3c3c;
+      text-align: center;
+      font-weight: 400;
+
+      span {
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+    }
+
+    img {
+      margin: 15px 0;
+    }
+
+    h2 {
+      font-size: 34px;
+      color: #3c3c3c;
+      font-weight: lighter;
+      margin-bottom: 50px;
+    }
+
+    .squareSteps {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      .item {
+        width: 150px;
+        height: 150px;
+        border: 0.75px solid #3c3c3c;
+        transform: rotate(45deg);
+        display: flex;
+        flex-direction: column;
+        //justify-content: center;
+        align-items: center;
+
+        .item-number {
+          font-size: 28px;
+          transform: rotate(-45deg);
+          color: #3c3c3c;
+          width: 40px;
+        }
+        .item-text {
+          font-size: 18px;
+          transform: rotate(-45deg);
+          width: 42px;
+        }
+      }
+    }
+  }
+}

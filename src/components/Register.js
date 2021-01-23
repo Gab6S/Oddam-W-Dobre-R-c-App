@@ -1,11 +1,15 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import decoration from "../assets/decoration.svg";
+
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+import decoration from "../assets/decoration.svg";
+import "../scss/_signUp_signIn.scss";
+
 import { auth } from "../firebase/firebase";
 import { useHistory } from "react-router-dom";
-import "../scss/_signUp_signIn.scss";
 
 const schema = yup.object().shape({
   email: yup
@@ -19,13 +23,16 @@ const schema = yup.object().shape({
   repeatedPassword: yup
     .string()
     .min(6, "Podane hasło jest za krótkie!")
-    .required("Hasło jest wymagane"),
+    .required("Hasło jest wymagane")
+    .oneOf([yup.ref("password"), null], "Hasła muszą się zgadzać!"),
 });
 
 const Register = () => {
-  const { register, handleSubmit, errors, watch } = useForm({
-    validationSchema: schema,
+  const methods = useForm({
+    resolver: yupResolver(schema),
+    mode: "onChange",
   });
+  const { register, handleSubmit, errors, watch } = methods;
   const currentPassword = useRef({});
   const history = useHistory();
   currentPassword.current = watch("password", "");
@@ -44,10 +51,6 @@ const Register = () => {
     fontSize: "12px",
     marginTop: "3px",
   };
-
-  var emailInput = document.getElementById("email");
-  var passwordInput = document.getElementById("password");
-  var repPasswordInput = document.getElementById("password2");
 
   const createUserWithEmailAndPassword = async (
     email,
@@ -72,7 +75,6 @@ const Register = () => {
         <div className="inputs-with-labels">
           <label for="email">Email</label>
           <input id="email" type="text" name="email" ref={register} />
-          {errors.email ? emailInput.classList.toggle("red-line") : null}
           {errors.email && (
             <p className="errorMsg" style={style}>
               {errors.email.message}
@@ -81,7 +83,7 @@ const Register = () => {
 
           <label for="password">Hasło</label>
           <input id="password" type="password" name="password" ref={register} />
-          {errors.password ? passwordInput.classList.toggle("red-line") : null}
+
           {errors.password && (
             <p className="errorMsg" style={style}>
               {errors.password.message}
@@ -96,17 +98,9 @@ const Register = () => {
             ref={register}
           />
 
-          {errors.repeatedPassword
-            ? repPasswordInput.classList.toggle("red-line")
-            : null}
-          {errors.repeatedPassword &&
-            errors.repeatedPassword.type === "validate" && (
-              <p style={style}>{errors.repeatedPassword.message}</p>
-            )}
-          {errors.repeatedPassword &&
-            errors.repeatedPassword.type === "minLength" && (
-              <p style={style}>Podane hasło jest za krótkie!</p>
-            )}
+          {errors.repeatedPassword && (
+            <p style={style}>{errors.repeatedPassword.message}</p>
+          )}
         </div>
         <div className="buttons">
           <button>

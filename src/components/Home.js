@@ -7,16 +7,12 @@ import HomeThreeColumns from "./HomeThreeColumns";
 import SimpleSteps from "./SimpleSteps";
 import WhoWeHelp from "./WhoWeHelp";
 import UserProvider from "../providers/UserProvider";
-import {
-  Switch,
-  Route,
-  BrowserRouter as Router,
-  HashRouter,
-} from "react-router-dom";
+import { Switch, Route, HashRouter as Router } from "react-router-dom";
 import LogIn from "./LogIn";
 import Register from "./Register";
 import Navigation from "./Navigation";
 import Logout from "./Logout";
+import { GiveItemsAway } from "./GiveItemsAway";
 
 const Home = () => {
   return (
@@ -39,6 +35,7 @@ const Home = () => {
             <Route path="/rejestracja">
               <Register />
             </Route>
+            <Route path="/oddaj-rzeczy" component={GiveItemsAway} />
           </Switch>
         </Router>
         {/* <HashRouter>
