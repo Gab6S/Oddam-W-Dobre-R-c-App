@@ -15,8 +15,10 @@ export const IntroGiveAway = () => {
         <h2>Wystarczą 4 proste kroki</h2>
         <div className="squareSteps">
           <div className="item">
-            <div className="item-number">1</div>
-            <div className="item-text">wybierz rzeczy</div>
+            <div className="item-number item-text">
+              1 <br />
+              <span>wybierz rzeczy</span>
+            </div>
           </div>
           <div className="item">
             <p className="item-number">2</p>

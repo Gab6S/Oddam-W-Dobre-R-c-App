@@ -1,0 +1,18 @@
+.checkboxes-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+
+  label {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .checkmark {
+      width: 30px;
+      height: 30px;
+      border: 0.75px solid #3c3c3c;
+      background-color: #fad648;
+    }
+  }
+}

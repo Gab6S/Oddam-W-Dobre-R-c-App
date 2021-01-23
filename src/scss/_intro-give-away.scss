@@ -56,19 +56,31 @@
         transform: rotate(45deg);
         display: flex;
         flex-direction: column;
-        //justify-content: center;
+        justify-content: center;
         align-items: center;
 
+        // .item-number {
+        //   font-size: 28px;
+        //   transform: rotate(-45deg);
+        //   color: #3c3c3c;
+        //   width: 40px;
+        // }
+        // .item-text {
+        //   font-size: 18px;
+        //   transform: rotate(-45deg);
+        //   width: 42px;
+        // }
+
         .item-number {
-          font-size: 28px;
-          transform: rotate(-45deg);
-          color: #3c3c3c;
-          width: 40px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          position: absolute;
+          transform: translateX(-50%) translateY(-50%) rotate(-45deg);
         }
+
         .item-text {
-          font-size: 18px;
-          transform: rotate(-45deg);
-          width: 42px;
+          //transform: translateY(25%);
         }
       }
     }
