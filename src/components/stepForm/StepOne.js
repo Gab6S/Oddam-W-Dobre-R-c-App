@@ -1,38 +1,45 @@
 import React from "react";
 import "../../scss/stepForm/_step-one.scss";
 
-export const StepOne = () => {
+export const StepOne = ({ formData, setForm, navigation }) => {
+  console.log(formData.item);
   return (
     <section className="step-one">
       <p>Krok 1/4</p>
       <h1>Zaznacz co chcesz oddać:</h1>
       <form className="checkboxes-list">
         <label>
+          <input type="radio" name="choice" value={formData.item}></input>
+          <span className="checkmark"></span>
           ubrania, które nadają się do ponownego użycia
-          <input type="radio"></input>
-          <span className="checkmark"></span>
         </label>
         <label>
+          <input type="radio" name="choice" value={formData.item}></input>
+          <span className="checkmark"></span>
           ubrania do wyrzucenia
-          <input type="radio"></input>
-          <span className="checkmark"></span>
         </label>
         <label>
+          <input type="radio" name="choice" value={formData.item}></input>
+          <span className="checkmark"></span>
           zabawki
-          <input type="radio"></input>
-          <span className="checkmark"></span>
         </label>
         <label>
+          <input type="radio" name="choice" value={formData.item}></input>
+          <span className="checkmark"></span>
           książki
-          <input type="radio"></input>
-          <span className="checkmark"></span>
         </label>
         <label>
-          inne
-          <input type="radio"></input>
+          <input type="radio" name="choice" value={formData.item}></input>
           <span className="checkmark"></span>
+          inne
         </label>
-        <button type="submit">Dalej</button>
+        <button
+          type="submit"
+          className="submit"
+          onClick={() => navigation.next()}
+        >
+          Dalej
+        </button>
       </form>
     </section>
   );

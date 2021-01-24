@@ -21,16 +21,22 @@ export const IntroGiveAway = () => {
             </div>
           </div>
           <div className="item">
-            <p className="item-number">2</p>
-            <p className="item-text">spakuj je w worki</p>
+            <div className="item-number item-text">
+              2 <br />
+              <span>spakuj je w worki</span>
+            </div>
           </div>
           <div className="item">
-            <div className="item-number">3</div>
-            <div className="item-text">wybierz fundację</div>
+            <div className="item-number item-text">
+              3 <br />
+              <span>wybierz fundację</span>
+            </div>
           </div>
           <div className="item">
-            <div className="item-number">4</div>
-            <div className="item-text">zamów kuriera</div>
+            <div className="item-number item-text">
+              4 <br />
+              <span>zamów kuriera</span>
+            </div>
           </div>
         </div>
       </div>

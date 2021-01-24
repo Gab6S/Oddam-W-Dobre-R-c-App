@@ -8,7 +8,7 @@ import { Summary } from "./stepForm/Summary";
 import { Thanks } from "./stepForm/Thanks";
 
 const defaultValues = {
-  items: [],
+  item: "",
   bagsNumber: null,
   location: "",
   needy: "",
@@ -35,7 +35,7 @@ export const MultiStepForm = () => {
   const [formData, setForm] = useForm(defaultValues);
   const { step, navigation } = useStep({
     steps,
-    initialStep: 0,
+    initialStep: 3,
   });
 
   const props = { formData, setForm, navigation };
@@ -44,11 +44,11 @@ export const MultiStepForm = () => {
     case "step1":
       return <StepOne {...props} />;
     case "step2":
-      return <StepTwo />;
+      return <StepTwo {...props} />;
     case "step3":
-      return <StepThree />;
+      return <StepThree {...props} />;
     case "step4":
-      return <StepFour />;
+      return <StepFour {...props} />;
     case "summary":
       return <Summary />;
     case "thanks":
