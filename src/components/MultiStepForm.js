@@ -9,16 +9,16 @@ import { Thanks } from "./stepForm/Thanks";
 
 const defaultValues = {
   item: "",
-  bagsNumber: null,
+  bagsNumber: "",
   location: "",
   needy: "",
   organizationName: "",
   street: "",
   city: "",
-  zipCode: null,
-  phoneNumber: null,
-  pickUpDate: null,
-  pickUpTime: null,
+  zipCode: "",
+  phoneNumber: "",
+  pickUpDate: "",
+  pickUpTime: "",
   comments: "",
 };
 
@@ -50,9 +50,9 @@ export const MultiStepForm = () => {
     case "step4":
       return <StepFour {...props} />;
     case "summary":
-      return <Summary />;
+      return <Summary {...props} />;
     case "thanks":
-      return <Thanks />;
+      return <Thanks {...props} />;
   }
 
   return <div></div>;

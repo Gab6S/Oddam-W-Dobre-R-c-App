@@ -38,9 +38,6 @@ const Home = () => {
             <Route path="/oddaj-rzeczy" component={GiveItemsAway} />
           </Switch>
         </Router>
-        {/* <HashRouter>
-        <Route path="/wylogowano"><Logout /></Route>
-      </HashRouter> */}
       </UserProvider>
     </div>
   );
