@@ -3,7 +3,7 @@ import { useForm, useStep } from "react-hooks-helper";
 import { StepOne } from "./stepForm/StepOne";
 import { StepTwo } from "./stepForm/StepTwo";
 import { StepThree } from "./stepForm/StepThree";
-import { StepFour } from "./stepForm/StepFour";
+import StepFour from "./stepForm/StepFour";
 import { Summary } from "./stepForm/Summary";
 import { Thanks } from "./stepForm/Thanks";
 
@@ -15,11 +15,11 @@ const defaultValues = {
   organizationName: "",
   street: "",
   city: "",
-  zipCode: "",
-  phoneNumber: "",
-  pickUpDate: "",
-  pickUpTime: "",
-  comments: "",
+  postCode: "",
+  phone: "",
+  date: "",
+  time: "",
+  note: "",
 };
 
 const steps = [
@@ -35,7 +35,7 @@ export const MultiStepForm = () => {
   const [formData, setForm] = useForm(defaultValues);
   const { step, navigation } = useStep({
     steps,
-    initialStep: 3,
+    initialStep: 0,
   });
 
   const props = { formData, setForm, navigation };

@@ -3,7 +3,22 @@ import tShirt from "../../assets/t-shirt.svg";
 import loading from "../../assets/loading.svg";
 import "../../scss/stepForm/_summary.scss";
 
-export const Summary = ({ navigation }) => {
+export const Summary = ({ formData, navigation }) => {
+  const {
+    item,
+    bagsNumber,
+    location,
+    needy,
+    organizationName,
+    street,
+    city,
+    postCode,
+    phone,
+    date,
+    time,
+    note,
+  } = formData;
+
   return (
     <section className="summary-step">
       <h1>Podsumowanie Twojej darowizny</h1>
@@ -11,11 +26,11 @@ export const Summary = ({ navigation }) => {
       <ul>
         <li>
           <img src={tShirt} alt="t-shirt icon" />
-          liczba worków, co i komu
+          `${bagsNumber} worków, ${item}, ${needy}`
         </li>
         <li>
           <img src={loading} alt="loading icon" />
-          dla lokalizacji: ...
+          `dla lokalizacji: ${location}`
         </li>
       </ul>
       <div className="main-section-form">
