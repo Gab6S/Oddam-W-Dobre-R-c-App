@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setState } from "react";
 import { useForm, useStep } from "react-hooks-helper";
 import { StepOne } from "./stepForm/StepOne";
 import { StepTwo } from "./stepForm/StepTwo";
@@ -35,7 +35,7 @@ export const MultiStepForm = () => {
   const [formData, setForm] = useForm(defaultValues);
   const { step, navigation } = useStep({
     steps,
-    initialStep: 0,
+    initialStep: 4,
   });
 
   const props = { formData, setForm, navigation };

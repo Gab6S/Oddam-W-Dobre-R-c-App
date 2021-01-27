@@ -2,7 +2,8 @@ import React from "react";
 import "../../scss/stepForm/_step-two.scss";
 
 export const StepTwo = ({ formData, setForm, navigation }) => {
-  console.log(navigation);
+  const { bagsNumber } = formData;
+  console.log(bagsNumber);
   return (
     <section className="step-two">
       <p>Krok 2/4</p>
@@ -10,7 +11,7 @@ export const StepTwo = ({ formData, setForm, navigation }) => {
       <form className="select-list">
         <label>
           Liczba 60l worków:
-          <select>
+          <select onChange={setForm}>
             <option value="0">--wybierz--</option>
             <option value="1">1</option>
             <option value="2">2</option>

@@ -23,19 +23,55 @@ export const Summary = ({ formData, navigation }) => {
     <section className="summary-step">
       <h1>Podsumowanie Twojej darowizny</h1>
       <h2>Oddajesz:</h2>
-      <ul>
+      <ul className="summary-list">
         <li>
           <img src={tShirt} alt="t-shirt icon" />
-          `${bagsNumber} worków, ${item}, ${needy}`
+          {bagsNumber} worków, {item},{needy}
         </li>
         <li>
           <img src={loading} alt="loading icon" />
-          `dla lokalizacji: ${location}`
+          dla lokalizacji: {location}
         </li>
       </ul>
       <div className="main-section-form">
-        <div>Adres odbioru:</div>
-        <div>Termin odbioru:</div>
+        <div className="pick-up-address">
+          <table>
+            <th>Adres odbioru:</th>
+            <tr>
+              <td>Ulica</td>
+              <td>{street}</td>
+            </tr>
+            <tr>
+              <td>Miasto</td>
+              <td>{city}</td>
+            </tr>
+            <tr>
+              <td>Kod pocztowy</td>
+              <td>{postCode}</td>
+            </tr>
+            <tr>
+              <td>Numer Telefonu</td>
+              <td>{phone}</td>
+            </tr>
+          </table>
+        </div>
+        <div className="pick-up-date">
+          <table>
+            <th>Termin odbioru:</th>
+            <tr>
+              <td>Data</td>
+              <td>{date}</td>
+            </tr>
+            <tr>
+              <td>Godzina</td>
+              <td>{time}</td>
+            </tr>
+            <tr>
+              <td>Uwagi dla kuriera</td>
+              <td>{note}</td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div className="btns">
         <button

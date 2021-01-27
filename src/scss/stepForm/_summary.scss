@@ -11,13 +11,37 @@
     margin-bottom: 25px;
   }
 
-  ul {
+  .summary-list {
     li {
       font-size: 20px;
       img {
         width: 40px;
         height: 40px;
       }
+    }
+  }
+
+  .main-section-form {
+    display: flex;
+    margin-top: 25px;
+
+    .pick-up-address,
+    .pick-up-date {
+      table {
+        th {
+          display: inline;
+        }
+        tr {
+          td {
+            width: 25px;
+            margin: 10px 0;
+          }
+        }
+      }
+    }
+
+    .pick-up-address {
+      margin-right: 200px;
     }
   }
 

@@ -9,54 +9,60 @@ export const StepOne = ({ formData, setForm, navigation }) => {
       <h1>Zaznacz co chcesz oddać:</h1>
       <form className="checkboxes-list">
         <label>
-          <input
-            type="radio"
-            name="choice"
-            value={formData.item}
-            onChange={setForm}
-          ></input>
-          <span className="checkmark"></span>
           ubrania, które nadają się do ponownego użycia
-        </label>
-        <label>
           <input
             type="radio"
-            name="choice"
-            value={formData.item}
+            name={item}
+            value="item1"
+            checked={item === "item1"}
             onChange={setForm}
-          ></input>
+          />
           <span className="checkmark"></span>
+        </label>
+        <label>
           ubrania do wyrzucenia
-        </label>
-        <label>
           <input
             type="radio"
-            name="choice"
-            value={formData.item}
+            name={item}
+            value="item2"
+            checked={item === "item2"}
             onChange={setForm}
-          ></input>
+          />
           <span className="checkmark"></span>
+        </label>
+
+        <label>
           zabawki
+          <input
+            type="radio"
+            name={item}
+            value="item3"
+            checked={item === "item3"}
+            onChange={setForm}
+          />
+          <span className="checkmark"></span>
         </label>
         <label>
           <input
             type="radio"
-            name="choice"
-            value={formData.item}
+            name={item}
+            value="item4"
+            checked={item === "item4"}
             onChange={setForm}
-          ></input>
-          <span className="checkmark"></span>
+          />
+          <span className="checkmark" />
           książki
         </label>
         <label>
           <input
             type="radio"
-            name="choice"
-            value={formData.item}
+            name={item}
+            value="item5"
+            checked={item === "item5"}
             onChange={setForm}
-          ></input>
-          <span className="checkmark"></span>
+          />
           inne
+          <span className="checkmark"></span>
         </label>
         <button
           type="submit"

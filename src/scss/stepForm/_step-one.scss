@@ -16,7 +16,8 @@
     align-items: flex-start;
 
     label {
-      display: inline-flex;
+      display: flex;
+      flex-direction: row-reverse;
       cursor: pointer;
       align-items: center;
       margin-top: 30px;
