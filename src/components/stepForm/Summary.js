@@ -19,6 +19,10 @@ export const Summary = ({ formData, navigation }) => {
     note,
   } = formData;
 
+  const people = needy.map((el) => {
+    return el;
+  });
+
   return (
     <section className="summary-step">
       <h1>Podsumowanie Twojej darowizny</h1>
@@ -26,7 +30,7 @@ export const Summary = ({ formData, navigation }) => {
       <ul className="summary-list">
         <li>
           <img src={tShirt} alt="t-shirt icon" />
-          {bagsNumber} worków, {item},{needy}
+          {bagsNumber} worków, {item}, {people}
         </li>
         <li>
           <img src={loading} alt="loading icon" />

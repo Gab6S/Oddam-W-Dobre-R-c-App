@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../scss/stepForm/_step-three.scss";
 
 export const StepThree = ({ formData, setForm, navigation }) => {
+  const { needy } = formData;
+  const [selected, setSelected] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleOnChange = (e) => {
+    // setIsChecked(e.target.checked);
+    // setSelected([...selected, e.target.value]);
+    // console.log(selected);
+  };
   return (
     <section className="step-three">
       <p>Krok 3/4</p>
@@ -18,23 +27,53 @@ export const StepThree = ({ formData, setForm, navigation }) => {
         <h2>Komu chcesz pomóc?</h2>
         <div className="who-we-help">
           <label>
-            <input type="checkbox" name="how_we_help" value="children" />
+            <input
+              type="checkbox"
+              name="needy"
+              value="dzieciom"
+              checked={isChecked}
+              onChange={handleOnChange}
+            />
             <span className="single-checkbox">dzieciom</span>
           </label>
           <label>
-            <input type="checkbox" name="how_we_help" value="mothers" />
+            <input
+              type="checkbox"
+              name="needy"
+              value="samotnym matkom"
+              checked={isChecked}
+              onChange={handleOnChange}
+            />
             <span className="single-checkbox">samotnym matkom</span>
           </label>
           <label>
-            <input type="checkbox" name="how_we_help" value="homeless" />
+            <input
+              type="checkbox"
+              name="needy"
+              value="bezdomnym"
+              checked={isChecked}
+              onChange={handleOnChange}
+            />
             <span className="single-checkbox">bezdomnym</span>
           </label>
           <label>
-            <input type="checkbox" name="how_we_help" value="disabled" />
+            <input
+              type="checkbox"
+              name="needy"
+              value="niepełnosprawnym"
+              checked={isChecked}
+              onChange={handleOnChange}
+            />
             <span className="single-checkbox">niepełnosprawnym</span>
           </label>
           <label>
-            <input type="checkbox" name="how_we_help" value="elderly" />
+            <input
+              type="checkbox"
+              name="needy"
+              value="osobom starszym"
+              checked={isChecked}
+              onChange={handleOnChange}
+            />
             <span className="single-checkbox">osobom starszym</span>
           </label>
         </div>

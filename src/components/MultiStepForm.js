@@ -8,10 +8,16 @@ import { Summary } from "./stepForm/Summary";
 import { Thanks } from "./stepForm/Thanks";
 
 const defaultValues = {
-  item: "",
+  item: [
+    { text: "ubrania, które nadają się do ponownego użycia", id: 1 },
+    { text: "ubrania do wyrzucenia", id: 2 },
+    { text: "zabawki", id: 3 },
+    { text: "książki", id: 4 },
+    { text: "inne", id: 5 },
+  ],
   bagsNumber: "",
   location: "",
-  needy: "",
+  needy: [],
   organizationName: "",
   street: "",
   city: "",
@@ -35,7 +41,7 @@ export const MultiStepForm = () => {
   const [formData, setForm] = useForm(defaultValues);
   const { step, navigation } = useStep({
     steps,
-    initialStep: 4,
+    initialStep: 0,
   });
 
   const props = { formData, setForm, navigation };
